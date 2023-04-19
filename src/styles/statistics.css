@@ -1,0 +1,18 @@
+statistics-details{
+    display: flex;
+    width:100%;
+}
+.statistics-details span{
+    width:5%;
+}
+progress[value]{
+    width:200px;
+    height:25px;
+}
+.progress-home{
+    color:green;   
+    direction: rtl;
+}
+.progress-away{
+    color:blue;
+}

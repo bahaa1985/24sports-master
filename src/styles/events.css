@@ -1,0 +1,49 @@
+.events{   
+    height:auto;
+    width:100%;
+    margin:auto;
+    text-align: center;
+}
+.event{
+    display: flex;
+    justify-content:center;
+    width:60%;
+    height: auto;
+    margin:10px auto;
+    text-align: center;
+}
+.events-home{
+   
+    height: auto;
+    border:1px solid black;
+    box-sizing: border-box;
+    width:40%;
+}
+.events-away{
+   
+    height: auto;
+    border:1px solid black;
+    box-sizing: border-box;
+    width:40%;
+}
+span{
+    border: 1px solid black;
+}
+.div-details{
+    height: auto;
+    display: flex;
+    width:45%;
+    padding:0 5px;
+    box-sizing: border-box;
+}
+.span-type{
+width:20%;
+}
+.div-players{
+width:70%;
+height: auto;
+display: block;
+}
+.label-player,.label-assist{
+width:100%;
+}
