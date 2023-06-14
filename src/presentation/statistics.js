@@ -47,59 +47,43 @@ function Statistics(props){
 
     return(
         <div>                              
-            {homeStatistics.map((item,index)=>{
-                statistics_arr[index].type=item.type;
-                item.value===null? statistics_arr[index].home=0 :
-                typeof(item.value)===String && item.value.contains('%')? statistics_arr[index].home=item.value.substring(item.value.length-1) : 
-                statistics_arr[index].home=item.value;                
-            })}
-            {awayStatistics.map((item,index)=>{              
-                item.value===null? statistics_arr[index].away=0 :
-                typeof(item.value)===String && item.value.contains('%')? statistics_arr[index].away=item.value.substring(item.value.length-1) : 
-                statistics_arr[index].away=item.value; 
-            })}
+            {
+                homeStatistics.map((item,index)=>{
+                    statistics_arr[index].type=item.type;
+                    item.value===null? statistics_arr[index].home=0 :
+                    typeof(item.value)===String && item.value.contains('%')? statistics_arr[index].home=item.value.substring(item.value.length-1) : 
+                    statistics_arr[index].home=item.value;                
+                })
+            }
+            {
+                awayStatistics.map((item,index)=>{              
+                    item.value===null? statistics_arr[index].away=0 :
+                    typeof(item.value)===String && item.value.contains('%')? statistics_arr[index].away=item.value.substring(item.value.length-1) : 
+                    statistics_arr[index].away=item.value; 
+                })
+            }
             {console.log('st_arr',...statistics_arr)}
-            {statistics_arr.map((item,index)=>{                                
-                total=item.home+item.away;
-                return(
-                    <div key={index}>
-                        <div>{item.type}</div>
-                            <div className="statistics-details">
-                                <span>{item.home}</span>
-                            <div>
-                                <progress className="progress-home" max={total} value={item.home} width={progress_width+'px'}></progress>
+            {
+                statistics_arr.map((item,index)=>{                                
+                    total=item.home+item.away;
+                    return(
+                        <div key={index} >
+                            <div>{item.type}</div>
+                                <div className="statistics-details">
+                                    <span>{item.home}</span>
+                                <div>
+                                    <progress className="progress-home" max={total} value={item.home} width={progress_width+'px'}></progress>
+                                </div>
+                                <div>
+                                    <progress className="progress-away" max={total} value={item.away} width={progress_width+'px'}></progress>
+                                </div>
+                                <span>{item.away}</span>
                             </div>
-                            <div>
-                                <progress className="progress-away" max={total} value={item.away} width={progress_width+'px'}></progress>
-                            </div>
-                            <span>{item.away}</span>
                         </div>
-                    </div>
-                )
-            })}               
-            
-            {/* //  homeStatistics.map((home,index)=>{
-            //     console.log('index',index)
-            //     total=home.value+awayStatistics[index].value
-            //     max=prgress_width
-            //     factor=max/total                    
-            //     return(
-            //     <div>
-            //         <div>{home.type}</div>
-            //         <div className="statistics-details">
-            //             <span>{home.value}</span>
-            //             <div>
-            //                 <progress className="progress-home" max={total} value={home.value}></progress>
-            //             </div>
-            //             <div>
-            //                 <progress className="progress-away" max={total} value={awayStatistics[index].value}></progress>
-            //             </div>
-            //             <span>{awayStatistics[index].value}</span>
-            //         </div>
-            //     </div>
-            //     )
-            // }) 
-        // } */}
+                    )
+                })
+            }               
+       
         </div>
     )
 }
